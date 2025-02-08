@@ -1,0 +1,18 @@
+services:
+  weatherapp:
+    build: .
+    container_name: "weatherapp"
+    restart: always
+    ports:
+      - "8080:8080"
+    healthcheck:
+      test: [ "CMD", "nc", "-z", "localhost", "8080" ]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - "weatherapp"
+
+networks:
+  weatherapp:
+    name: weatherapp
