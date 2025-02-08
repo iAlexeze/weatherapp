@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="{{ url_for('static', filename='images/weather-logo.png') }}" sizes="196x196">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/weather-styles.css') }}">
+    <title>Weather App</title>
+</head>
+<body>
+
+    <div class="weather-effect"></div>
+
+    <div class="container">
+        <h2>Weather App</h2>
+        <!-- Add a datalist for cached cities -->
+        <input type="text" id="city" placeholder="Enter city name" list="cachedCities">
+        <datalist id="cachedCities"></datalist>
+        <button onclick="checkWeather()">Check Weather</button>
+        <div class="weather-result" id="weatherResult"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/weather-script.js') }}"></script>
+</body>
+</html>
