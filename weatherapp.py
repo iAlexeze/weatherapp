@@ -4,8 +4,12 @@ from flask_caching import Cache
 import time
 import os
 import logging
+from dotenv import load_dotenv
 
 app = Flask(__name__)
+
+# Load environment variables from the .env file
+load_dotenv()
 PORT = os.environ.get('PORT', 8080)
 API_KEY = os.environ.get('API_KEY')
 
